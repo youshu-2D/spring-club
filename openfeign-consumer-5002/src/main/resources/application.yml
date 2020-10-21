@@ -1,0 +1,20 @@
+server:
+  port: 5002
+
+spring:
+  application:
+    name: openfeign-consumer-5002
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://xtkj3001.com:3001/eureka,http://xtkj3002.com:3002/eureka
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 6000  # 指定Feign客户端连接提供者的超时时限   取决于网络环境
+        readTimeout: 6000   # 指定Feign客户端从请求到获取到提供者给出的响应的超时时限  取决于业务逻辑运算时间
+  hystrix:
+    enabled: true

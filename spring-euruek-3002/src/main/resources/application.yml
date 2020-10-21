@@ -1,0 +1,15 @@
+server:
+  port: 3002
+
+spring:
+  application:
+    name: euruek-3002
+
+eureka:
+  instance:
+    hostname: xtkj3002.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://xtkj3001.com:3001/eureka

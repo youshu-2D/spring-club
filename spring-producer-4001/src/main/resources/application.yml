@@ -1,0 +1,31 @@
+server:
+  port: 4001
+
+
+spring:
+  application:
+    name: spring-producer-4001
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://139.196.107.40:3306/xt_test?serverTimeZone=UTC
+    username: root
+    password: 123456
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://xtkj3001.com:3001/eureka,http://xtkj3002.com:3002/eureka
+
+info:
+  app:
+    name: hello
+  company: 讯腾科技
+  build:
+    artifactId: $aaa$
+  version:  $project.version$
+
+mybatis-plus:
+  mapper-locations: com/xtkj/mapper/*.xml
+  config-location: classpath:mybatis-config.xml
